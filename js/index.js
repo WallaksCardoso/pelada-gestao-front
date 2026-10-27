@@ -1,6 +1,4 @@
-const BASE_URL = (window.location.hostname.includes('localhost') || window.location.hostname === '127.0.0.1')
-  ? 'http://localhost:8081/api/auth'
-  : 'https://spring-jwt-auth-jdli.onrender.com/api/auth';
+const BASE_URL = `${API_AUTH}/auth`;
 
 document.addEventListener("DOMContentLoaded", () => {
   atualizarAssinatura();

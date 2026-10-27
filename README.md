@@ -45,7 +45,8 @@ Server do VS Code (porta 5500) ou:
 npx serve .
 ```
 
-Em `localhost` ou `127.0.0.1`, as páginas usam os backends locais:
+Os endereços dos backends ficam em `js/config.js`. Em `localhost` ou `127.0.0.1`, as páginas usam os
+backends locais:
 
 | Serviço | Endereço local | Produção |
 | --- | --- | --- |
@@ -59,7 +60,7 @@ Em qualquer outro endereço, usam os de produção.
 ```
 index.html        login
 pages/            telas (home, cadastro de usuário, nova lista, jogadores, listas)
-js/               um script por tela, mais tema e utilidades
+js/               endereços da API (config.js), um script por tela, tema e utilidades
 css/              estilos e avisos (toast)
 img/              imagem de fundo
 ```

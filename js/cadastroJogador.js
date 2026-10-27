@@ -1,7 +1,5 @@
 
-const BASE_URL = (window.location.hostname.includes('localhost') || window.location.hostname === '127.0.0.1')
-  ? 'http://localhost:8080/api'
-  : 'https://pelada-gestao.onrender.com/api';
+const BASE_URL = API_PELADA;
 
 const apiUrlJogadores = `${BASE_URL}/jogadores`;
 const apiUrlSorteio = `${BASE_URL}/sorteios`;
