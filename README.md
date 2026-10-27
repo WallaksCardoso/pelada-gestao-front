@@ -1,66 +1,75 @@
-# pelada-gestao-front
+# Panelinha (pelada-gestao-front)
 
-Frontend do sistema de gestão de pelada.
+Interface web para montar a lista da pelada, cadastrar os jogadores e sortear os times, feita em
+HTML, CSS e JavaScript puro.
 
-## Características
+![HTML](https://img.shields.io/badge/HTML5-informational)
+![CSS](https://img.shields.io/badge/CSS3-informational)
+![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-informational)
+[![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-informational)](LICENSE)
 
-- Cadastro de pessoas (admin ou organizador)
-- Criação e configuração de sorteios de times
-- Cadastro de jogadores (com opção de goleiro)
-- Sorteio automático de equipes e reservas
-- Exclusão de jogadores e sorteios
-- Visualização de Listas fechadas
-- Interface simples e responsiva
-- Feedback visual com toast e loading
+**Demonstração:** <https://wallakscardoso.github.io/pelada-gestao-front/>
 
-## Tecnologias Utilizadas
+## Sobre
 
-- HTML5
-- CSS3
-- JavaScript puro (Vanilla JS)
-- Fetch API para integração com backend REST
-- Organização modular por páginas e funções
-- Backend: [pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao)
+É o front do sistema da pelada em microsserviços. O login e o cadastro de usuários falam com o
+[spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth); listas, jogadores e sorteios
+falam com o [pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao), enviando o token JWT
+recebido no login. Sem framework e sem etapa de build: cada página tem seu HTML e seu script.
 
-## Estrutura de Pastas
+Existe também uma versão em Flutter: [pelada-gestao-front-web](https://github.com/WallaksCardoso/pelada-gestao-front-web).
 
-```
-css/
-  style.css
-  toast.css
+## Funcionalidades
 
-js/
-  cadastroJogador.js
-  cadastroPessoa.js
-  cadastroSorteio.js
-  home.js
-  index.js
-  sorteiosAnteriores.js
-  utils.js
+- Login e cadastro de usuário
+- Criação de listas (sorteios) com jogadores por equipe e e-mail de notificação
+- Cadastro de jogadores na lista, marcando goleiros
+- Sorteio dos times Azul e Vermelho, com reservas
+- Listas em andamento e listas fechadas (já sorteadas)
+- Exclusão de jogadores e listas
+- Tema claro e escuro, lembrado entre as visitas
+- Avisos (toast) e indicador de carregamento
 
-pages/
-  cadastroJogador.html
-  cadastroPessoa.html
-  cadastroSorteio.html
-  home.html
-  sorteiosAnteriores.html
+## Stack
 
-index.html
-README.md
-```
+- HTML5 e CSS3
+- JavaScript puro, com Fetch API
+- GitHub Pages para a publicação
 
 ## Como rodar
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/WallaksCardoso/pelada-gestao-front.git
-   ```
+Não há instalação: basta servir a pasta com qualquer servidor estático, por exemplo a extensão Live
+Server do VS Code (porta 5500) ou:
 
-2. Acesse a pasta do projeto:
-   ```bash
-   cd pelada-gestao-front
-   ```
+```bash
+npx serve .
+```
 
-3. Abra o arquivo `index.html` ou `pages/home.html` no navegador.
+Em `localhost` ou `127.0.0.1`, as páginas usam os backends locais:
 
-4. Certifique-se de que o backend está rodando em `http://localhost:8080` ou utilize a URL da versão em produção.
+| Serviço | Endereço local | Produção |
+| --- | --- | --- |
+| Autenticação ([spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth)) | `http://localhost:8081` | `https://spring-jwt-auth-jdli.onrender.com` |
+| Pelada ([pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao)) | `http://localhost:8080` | `https://pelada-gestao.onrender.com` |
+
+Em qualquer outro endereço, usam os de produção.
+
+## Estrutura
+
+```
+index.html        login
+pages/            telas (home, cadastro de usuário, nova lista, jogadores, listas)
+js/               um script por tela, mais tema e utilidades
+css/              estilos e avisos (toast)
+img/              imagem de fundo
+```
+
+## Projetos relacionados
+
+- [pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao): API de listas, jogadores e sorteio
+- [spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth): login e cadastro de usuários
+- [pelada-gestao-front-web](https://github.com/WallaksCardoso/pelada-gestao-front-web): versão em Flutter
+
+## Licença
+
+[MIT](LICENSE)
