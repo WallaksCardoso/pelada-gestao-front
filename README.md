@@ -8,7 +8,10 @@ HTML, CSS e JavaScript puro.
 ![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-informational)
 [![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-informational)](LICENSE)
 
-**Demonstração:** <https://wallakscardoso.github.io/pelada-gestao-front/>
+> **Projeto arquivado.** Foi substituído pela versão em Flutter,
+> [pelada-gestao-front-web](https://github.com/WallaksCardoso/pelada-gestao-front-web), que sobe junto
+> com o sistema inteiro pelo Docker Compose do
+> [pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao). O código fica aqui como referência.
 
 ## Sobre
 
@@ -16,8 +19,6 @@ HTML, CSS e JavaScript puro.
 [spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth); listas, jogadores e sorteios
 falam com o [pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao), enviando o token JWT
 recebido no login. Sem framework e sem etapa de build: cada página tem seu HTML e seu script.
-
-Existe também uma versão em Flutter: [pelada-gestao-front-web](https://github.com/WallaksCardoso/pelada-gestao-front-web).
 
 ## Funcionalidades
 
@@ -34,7 +35,6 @@ Existe também uma versão em Flutter: [pelada-gestao-front-web](https://github.
 
 - HTML5 e CSS3
 - JavaScript puro, com Fetch API
-- GitHub Pages para a publicação
 
 ## Como rodar
 
@@ -45,15 +45,9 @@ Server do VS Code (porta 5500) ou:
 npx serve .
 ```
 
-Os endereços dos backends ficam em `js/config.js`. Em `localhost` ou `127.0.0.1`, as páginas usam os
-backends locais:
-
-| Serviço | Endereço local | Produção |
-| --- | --- | --- |
-| Autenticação ([spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth)) | `http://localhost:8081` | `https://spring-jwt-auth-jdli.onrender.com` |
-| Pelada ([pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao)) | `http://localhost:8080` | `https://pelada-gestao.onrender.com` |
-
-Em qualquer outro endereço, usam os de produção.
+Os endereços dos backends ficam em `js/config.js`: autenticação
+([spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth)) em `http://localhost:8081` e pelada
+([pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao)) em `http://localhost:8080`.
 
 ## Estrutura
 
@@ -69,7 +63,7 @@ img/              imagem de fundo
 
 - [pelada-gestao](https://github.com/WallaksCardoso/pelada-gestao): API de listas, jogadores e sorteio
 - [spring-jwt-auth](https://github.com/WallaksCardoso/spring-jwt-auth): login e cadastro de usuários
-- [pelada-gestao-front-web](https://github.com/WallaksCardoso/pelada-gestao-front-web): versão em Flutter
+- [pelada-gestao-front-web](https://github.com/WallaksCardoso/pelada-gestao-front-web): versão em Flutter, que substitui esta
 
 ## Licença
 
